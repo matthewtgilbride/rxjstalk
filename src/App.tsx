@@ -1,38 +1,46 @@
-import React, { Component } from 'react';
-import { fromEvent } from 'rxjs';
-import { debounceTime } from 'rxjs/operators'
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import './App.css';
+import { debounce, getClickObservable } from "./observables";
+import styles from './App.module.css'
 
-const rawObservable = fromEvent(document.getElementById('first') || window, 'click')
+const App: FunctionComponent<{}> = () => {
 
-class App extends Component<{}, { clicked: number, debounced: number }> {
-  public state = {
-    clicked: 0,
-    debounced: 0,
+  const [clicked, setClicked] = useState(0);
+  const [debounced, setDebounced] = useState(0);
+
+  debugger;
+
+  const handleClicked = () => {
+    const foo = clicked;
+    debugger;
+    setClicked(clicked + 1)
   }
+  const handleDebounced = () => setDebounced(debounced + 1)
+  const logIt = (msg: string) => () => console.log(msg)
 
-  public componentDidMount = () => {
-    rawObservable
-      .subscribe(
-        () => this.setState({ clicked: this.state.clicked + 1 })
-      )
-    rawObservable.pipe(
-      debounceTime(2000)
-    )
-      .subscribe(
-        () => this.setState({ debounced: this.state.debounced + 1 })
-      )
-  }
+  useEffect(
+    () => {
+      const rawObservable = getClickObservable('first')
+      const sub1 = rawObservable.subscribe(handleClicked, logIt('click error'), logIt('click complete'))
+      const sub2 = debounce(rawObservable, 2000).subscribe(handleDebounced, logIt('debounce error'), logIt('debounce complete'))
+      return () => {
+        sub1.unsubscribe()
+        sub2.unsubscribe()
+      }
+    },
+    []
+  )
 
-  render() {
-    return (
-      <div style={{ textAlign: 'center', verticalAlign: 'center' }}>
+  return (
+    <div className={styles["flex-grid"]}>
+      <div className={styles.col}>
         <button id='first'>Baby's First Observable</button>
-        <div>{`button has been clicked ${this.state.clicked} times`}</div>
-        <div>{`debounced: ${this.state.debounced} times`}</div>
       </div>
-    );
-  }
+      <div className={styles.col}>{`button has been clicked ${clicked} times`}</div>
+      <div className={styles.col}>{`debounced: ${debounced} times`}</div>
+    </div>
+  );
+
 }
 
 export default App;
