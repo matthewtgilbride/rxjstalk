@@ -1,5 +1,6 @@
 .flex-grid {
     display: flex;
+    padding: 5% 25% 5% 25%;
 }
 .col {
     flex: 1;

@@ -1,45 +1,42 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { debounce, getClickObservable } from "./observables";
 import styles from './App.module.css'
 
-const App: FunctionComponent<{}> = () => {
+export class App extends Component<{}, { clicked: number, debounced: number }>  {
 
-  const [clicked, setClicked] = useState(0);
-  const [debounced, setDebounced] = useState(0);
-
-  debugger;
-
-  const handleClicked = () => {
-    const foo = clicked;
-    debugger;
-    setClicked(clicked + 1)
+  public state = {
+    clicked: 0,
+    debounced: 0,
   }
-  const handleDebounced = () => setDebounced(debounced + 1)
-  const logIt = (msg: string) => () => console.log(msg)
 
-  useEffect(
-    () => {
-      const rawObservable = getClickObservable('first')
-      const sub1 = rawObservable.subscribe(handleClicked, logIt('click error'), logIt('click complete'))
-      const sub2 = debounce(rawObservable, 2000).subscribe(handleDebounced, logIt('debounce error'), logIt('debounce complete'))
-      return () => {
-        sub1.unsubscribe()
-        sub2.unsubscribe()
-      }
-    },
-    []
-  )
+  public handleClicked = () => this.setState({ clicked: this.state.clicked + 1 })
+  public handleDebounced = () => this.setState({ debounced: this.state.debounced + 1 })
 
-  return (
-    <div className={styles["flex-grid"]}>
-      <div className={styles.col}>
-        <button id='first'>Baby's First Observable</button>
-      </div>
-      <div className={styles.col}>{`button has been clicked ${clicked} times`}</div>
-      <div className={styles.col}>{`debounced: ${debounced} times`}</div>
-    </div>
-  );
+  public componentDidMount = () => {
+    const rawObservable = getClickObservable('debounce')
+    rawObservable.subscribe({ next: this.handleClicked })
+    debounce(rawObservable, 2000).subscribe({ next: this.handleDebounced })
+  }
+
+  public render = () => {
+    return (
+      <>
+        <div className={styles["flex-grid"]}>
+          <div className={styles.col}>Click Me</div>
+          <div className={styles.col}>Click Count</div>
+          <div className={styles.col}>Operator Count</div>
+        </div>
+        <div className={styles["flex-grid"]}>
+          <div className={styles.col}>
+            <button id='debounce'>Debounce 2 Seconds</button>
+          </div>
+          <div className={styles.col}>{this.state.clicked}</div>
+          <div className={styles.col}>{this.state.debounced}</div>
+        </div>
+      </>
+    );
+  }
 
 }
 
