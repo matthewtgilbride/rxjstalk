@@ -5,3 +5,7 @@ export const getClickObservable = (id: string) => fromEvent(document.getElementB
 
 export const debounce = (source$: Observable<any>, time: number) => source$.pipe(debounceTime(time))
 
+export const subscribeNext = (source$: Observable<any>, next: (value: any) => void) => source$.subscribe({ next })
+
+
+

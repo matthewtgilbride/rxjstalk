@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { debounce, getClickObservable } from "./observables";
+import { debounce, getClickObservable, subscribeNext } from "./observables";
 import styles from './App.module.css'
-import { forkJoin, merge, timer, zip, of } from 'rxjs';
-import { take, mergeMap } from 'rxjs/operators';
-import { delay } from "q";
+import { forkJoin, timer, zip } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 
 export class App extends Component<{}, {
   clicked: number,
@@ -34,7 +33,7 @@ export class App extends Component<{}, {
   public componentDidMount = () => {
     const rawObservable = getClickObservable('debounce')
     const raw2 = getClickObservable('zip')
-    raw2.subscribe({ next: this.handleClicked2 })
+    subscribeNext(raw2, this.handleClicked2)
     zip(rawObservable, raw2).subscribe({ next: this.handleZipped})
     rawObservable.subscribe({ next: this.handleClicked })
     debounce(rawObservable, 2000).subscribe({ next: this.handleDebounced })
