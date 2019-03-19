@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { TestScheduler } from 'rxjs/testing';
-import { map } from 'rxjs/operators';
-import { zip } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
+import { zip, merge } from 'rxjs';
 
 const objectEqualityTestScheduler = () => new TestScheduler((actual, expected) => {
   // asserting the two objects are equal
@@ -67,4 +67,21 @@ describe('zip emits the most recently emitted item from each source observable, 
     })
   })
 
+})
+
+describe('mergeMap', () => {
+  it('basic', () => {
+    objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
+
+      const in1 = cold('a---bc------')
+      const in2 = cold('d-----e--f--')
+
+      const outputStream = in1.pipe(
+        mergeMap(() => in2)
+      )
+
+      expectObservable(outputStream).toBe('(ad)bce--f--')
+
+    })
+  })
 })
