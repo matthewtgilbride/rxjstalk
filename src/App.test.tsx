@@ -102,14 +102,14 @@ describe('mergeMap', () => {
   fit('mergeMap diagram', () => {
     objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
 
-      const in1 = cold('abc---|')
-      const in2 = cold('1--2|')
+      const in1 = cold('abc------|')
+      const in2 = cold('1--2--|')
 
       const outputStream = in1.pipe(
         mergeMap(() => in2, (x, y) => "" + x + y, 2)
       )
 
-      expectObservable(outputStream).toBe('abcde---(fg)-h-----------i---|', { a: 'a1', b: 'b1', c: 'a2', d: 'b2', e: 'a3', f: 'b3', g: 'c1', h: 'c2', i: 'c3' })
+      expectObservable(outputStream).toBe('ab-cd-e--f--|', { a: 'a1', b: 'b1', c: 'a2', d: 'b2', e: 'c1', f: 'c2', g: 'c1', h: 'c2', i: 'c3' })
 
     })
   })
