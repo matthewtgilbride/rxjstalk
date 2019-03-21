@@ -91,7 +91,6 @@ describe('mergeMap', () => {
 
       const outputStream = in1.pipe(
         mergeMap((x) => in2.pipe(map(y => x + y))),
-        mergeMap(() => in2, (x, y) => "" + x + y, 2)
       )
 
       expectObservable(outputStream).toBe('abcdefghi---|', { a: 'a1', b: 'b1', c: 'c1', d: 'a2', e: 'b2', f: 'c2', g: 'a3', h: 'b3', i: 'c3' })
@@ -99,7 +98,7 @@ describe('mergeMap', () => {
     })
   })
 
-  fit('mergeMap diagram', () => {
+  it('mergeMap diagram', () => {
     objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
 
       const in1 = cold('abc------|')
