@@ -10,12 +10,6 @@ const objectEqualityTestScheduler = () => new TestScheduler((actual, expected) =
   expect(actual).toEqual(expected);
 });
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
-
 it('should double source value', () => {
 
   objectEqualityTestScheduler().run(helpers => {
@@ -98,17 +92,21 @@ describe('mergeMap', () => {
     })
   })
 
-  it('mergeMap diagram', () => {
+  fit('mergeMap diagram', () => {
     objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
 
-      const in1 = cold('abc------|')
-      const in2 = cold('1----2--3|')
+      const in1 = 'a--- b--- c---  ---- ---- ----  ---- ---- ---- |'
+      const in2 = '1--- ---- ----  2--- 3--- |'
+      const out = 'a--- b--- ----  c--- (de)  (fg) ---- ---- h--- i--- |'
 
-      const outputStream = in1.pipe(
-        mergeMap(() => in2, (x, y) => "" + x + y, 2)
+      const in1$ = cold(in1)
+      const in2$ = cold(in2)
+
+      const outputStream = in1$.pipe(
+        mergeMap(() => in2$, (x, y) => "" + x + y, 2)
       )
 
-      expectObservable(outputStream).toBe('ab---cd-e(fg)-h--i|', { a: 'a1', b: 'b1', c: 'a2', d: 'b2', e: 'a3', f: 'b3', g: 'c1', h: 'c2', i: 'c3' })
+      expectObservable(outputStream).toBe(out, { a: 'a1', b: 'b1', c: 'a2', d: 'a3', e: 'b2', f: 'b3', g: 'c1', h: 'c2', i: 'c3' })
 
     })
   })
