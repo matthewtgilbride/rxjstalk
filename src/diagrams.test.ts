@@ -33,8 +33,8 @@ describe('rxmarbles.com diagrams', () => {
   it('concat', () => {
     objectEqualityTestScheduler().run(({cold, expectObservable}) => {
 
-      const in1 = 'a-- --- a-- --- a--        |'
-      const in2 = 'b-- b--                    |'
+      const in1 = 'a-- --- a-- --- a-- |'
+      const in2 = 'b-- b-- |'
       const out = 'a-- --- a-- --- a-- b-- b--|'
 
       const values = {
@@ -75,9 +75,10 @@ describe('rxmarbles.com diagrams', () => {
   it('mergeMap', () => {
     objectEqualityTestScheduler().run(({cold, expectObservable}) => {
 
-      const in1 = 'a--- b--- c---  ---- ---- ----  ---- ---- ---- |'
-      const in2 = '1--- ---- ----  2--- 3--- |'
-      const out = 'a--- b--- ----  c--- (de)  (fg) ---- ---- h--- i--- |'
+      const in1 = 'a--- b--- c--- ---- ---- ---- ---- ---- ---- |'
+      const in2 = '1--- ---- ---- 2--- 3--- |'
+
+      const out = 'a--- b--- ---- c--- (de) (fg) ---- ---- h--- i--- |'
 
       const values = {
         a: 'a1',

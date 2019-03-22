@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`merge and mergeMap merge alone 1`] = `
+Array [
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "a",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": " ",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "b",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "c",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": " ",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "|",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "d",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": " ",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "e",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": " ",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "f",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "-",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": " ",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": true,
+      "kind": "N",
+      "value": "|",
+    },
+  },
+  Object {
+    "frame": 0,
+    "notification": Notification {
+      "error": undefined,
+      "hasValue": false,
+      "kind": "C",
+      "value": undefined,
+    },
+  },
+]
+`;
