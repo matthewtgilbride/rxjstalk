@@ -1,7 +1,7 @@
 import React from 'react';
 import { TestScheduler } from 'rxjs/testing';
-import { map, mergeMap, debounceTime } from 'rxjs/operators';
-import { concat, merge, zip } from 'rxjs';
+import { map, mergeMap, debounceTime, take } from 'rxjs/operators';
+import { concat, merge, zip, forkJoin } from 'rxjs';
 
 const objectEqualityTestScheduler = () => new TestScheduler((actual, expected) => {
   // asserting the two objects are equal
@@ -95,6 +95,94 @@ describe('diagrams', () => {
       expectObservable(outputStream).toBe(out, { a: 'a1', b: 'b1', c: 'a2', d: 'a3', e: 'b2', f: 'b3', g: 'c1', h: 'c2', i: 'c3' })
 
     })
+  })
+
+})
+
+describe('real life examples', () => {
+
+  it('forkJoin', () => {
+    objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
+
+      const in1 = '-u- a--    |'
+      const in2 = '--- vb-    |'
+      const in3 = '--- c--    |'
+      const out = '--- --- (z|)'
+
+      const values = {
+        a: { foo: 'bar' },
+        b: { bar: 'baz' },
+        c: { fizz: 'buzz' },
+        u: 'lost',
+        v: 'also lost',
+        z: {
+          foo: 'bar',
+          bar: 'baz',
+          fizz: 'buzz',
+        }
+      }
+
+      const in1$ = cold(in1, values)
+      const in2$ = cold(in2, values)
+      const in3$ = cold(in3, values)
+
+      const outputStream = forkJoin(in1$, in2$, in3$).pipe(map(
+        // @ts-ignore
+        ([x, y, z]) => ({ ...x, ...y, ...z })))
+
+      expectObservable(outputStream).toBe(out, values)
+
+    })
+  })
+
+  describe('zip take 1', () => {
+
+    fit('order 1', () => {
+      objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
+
+        const in1 = '-x- --- a-- |'
+        const in2 = '--- --- yb- |'
+        const in3 = '--- --- c-- |'
+        const out = '--- --- (z|)|'
+
+        const values = {
+          z: ['x', 'y', 'c']
+        }
+
+        const in1$ = cold(in1)
+        const in2$ = cold(in2)
+        const in3$ = cold(in3)
+
+        const outputStream = zip(in1$, in2$, in3$).pipe(take(1))
+
+        expectObservable(outputStream).toBe(out, values)
+
+      })
+    })
+
+    it('order 2', () => {
+      objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
+
+        const in1 = '-xx a-a|'
+        const in2 = 'y-- -b-|'
+        const in3 = 'c-d efg|'
+        const out = '-z- ---|'
+
+        const values = {
+          z: ['x', 'y', 'c']
+        }
+
+        const in1$ = cold(in1)
+        const in2$ = cold(in2)
+        const in3$ = cold(in3)
+
+        const outputStream = zip(in1$, in2$, in3$).pipe(take(1))
+
+        expectObservable(outputStream).toBe(out, values)
+
+      })
+    })
+
   })
 
 })
