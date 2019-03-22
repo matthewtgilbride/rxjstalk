@@ -78,18 +78,18 @@ describe('rxmarbles.com diagrams', () => {
       const in1 = 'a--- b--- c--- ---- ---- ---- ---- ---- ---- |'
       const in2 = '1--- ---- ---- 2--- 3--- |'
 
-      const out = 'a--- b--- ---- c--- (de) (fg) ---- ---- h--- i--- |'
+      const out = 'r--- s--- ---- t--- (uv) (wx) ---- ---- y--- z--- |'
 
       const values = {
-        a: 'a1',
-        b: 'b1',
-        c: 'a2',
-        d: 'a3',
-        e: 'b2',
-        f: 'b3',
-        g: 'c1',
-        h: 'c2',
-        i: 'c3',
+        r: 'a1',
+        s: 'b1',
+        t: 'a2',
+        u: 'a3',
+        v: 'b2',
+        w: 'b3',
+        x: 'c1',
+        y: 'c2',
+        z: 'c3',
       }
 
 
