@@ -164,9 +164,9 @@ describe('real life examples', () => {
       objectEqualityTestScheduler().run(({ cold, expectObservable}) => {
 
         const in1 = '-xx a-a|'
-        const in2 = 'y-- -b-|'
-        const in3 = '--d efg|'
-        const out = '--(z|)'
+        const in2 = 'yxx -b-|'
+        const in3 = '--- dyy|'
+        const out = '--- (z|)'
 
         const values = {
           z: ['x', 'y', 'd']
@@ -182,6 +182,10 @@ describe('real life examples', () => {
 
       })
     })
+
+  })
+
+  describe('debounce', () => {
 
   })
 
