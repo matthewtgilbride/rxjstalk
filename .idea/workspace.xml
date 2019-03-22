@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c10fc40d-ff70-4150-a673-8479a052ce51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scenarios.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/simpleMergeMap.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zip.test.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/concurrentMergeMap.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diagrams.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagrams.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diagrams.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/diagrams.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenarios.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scenarios.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simpleMergeMap.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/simpleMergeMap.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zip.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/zip.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/talk.key" beforeDir="false" afterPath="$PROJECT_DIR$/talk.key" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +21,11 @@
     <session id="-1207584454">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -34,7 +35,7 @@
           <entry key="json" value="1" />
           <entry key="lock" value="1" />
           <entry key="snap" value="1" />
-          <entry key="ts" value="21" />
+          <entry key="ts" value="22" />
           <entry key="tsx" value="7" />
         </counts>
       </usages-collector>
@@ -44,21 +45,21 @@
           <entry key="JSON" value="1" />
           <entry key="Jest Snapshot" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="21" />
+          <entry key="TypeScript" value="22" />
           <entry key="TypeScript JSX" value="7" />
           <entry key="yarn.lock" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="5" />
+          <entry key="TypeScriptServerServiceImpl" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="44" />
           <entry key="gitignore" value="11" />
-          <entry key="ts" value="613" />
+          <entry key="ts" value="1256" />
           <entry key="tsx" value="7537" />
           <entry key="txt" value="270" />
         </counts>
@@ -67,7 +68,7 @@
         <counts>
           <entry key="CSS" value="44" />
           <entry key="PLAIN_TEXT" value="281" />
-          <entry key="TypeScript" value="613" />
+          <entry key="TypeScript" value="1256" />
           <entry key="TypeScript JSX" value="7537" />
         </counts>
       </usages-collector>
@@ -82,10 +83,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/diagrams.test.ts">
+        <entry file="file://$PROJECT_DIR$/src/test/concurrentMergeMap.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="885">
+              <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/diagrams.test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="88" column="16" lean-forward="true" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -94,24 +107,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenarios.test.tsx">
+        <entry file="file://$PROJECT_DIR$/src/test/scenarios.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="93" column="4" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+            <state relative-caret-position="-1041">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simpleMergeMap.test.tsx">
+        <entry file="file://$PROJECT_DIR$/src/test/simpleMergeMap.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="1311">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
-                <element signature="e#0#57#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,13 +171,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/zip.test.tsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/zip.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="667">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,6 +216,10 @@
         <option value="$PROJECT_DIR$/src/scenarios.test.tsx" />
         <option value="$PROJECT_DIR$/src/App.test.tsx" />
         <option value="$PROJECT_DIR$/src/zip.test.tsx" />
+        <option value="$PROJECT_DIR$/src/test/scenarios.test.ts" />
+        <option value="$PROJECT_DIR$/src/test/simpleMergeMap.test.ts" />
+        <option value="$PROJECT_DIR$/src/test/zip.test.ts" />
+        <option value="$PROJECT_DIR$/src/test/concurrentMergeMap.test.ts" />
       </list>
     </option>
   </component>
@@ -233,7 +250,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,19 +268,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="__snapshots__" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="rxjstalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rxjstalk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553277989095" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553282024099" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$USER_HOME$/.nvm/versions/node/v7.10.0/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -327,7 +355,8 @@
       <workItem from="1552855087676" duration="10176000" />
       <workItem from="1552947139356" duration="3839000" />
       <workItem from="1553117101438" duration="3864000" />
-      <workItem from="1553272851140" duration="2548000" />
+      <workItem from="1553272851140" duration="3293000" />
+      <workItem from="1553279495472" duration="2081000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1552864181378</created>
@@ -445,7 +474,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28447000" />
+    <option name="totallyTimeSpent" value="31273000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,7 +497,7 @@
       <window_info id="Designer" order="5" />
       <window_info id="Favorites" order="6" show_stripe_button="false" side_tool="true" />
       <window_info id="SBT" order="7" weight="0.32844934" />
-      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.49614644" visible="true" weight="0.0976801" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" sideWeight="0.49614644" visible="true" weight="0.3028083" />
       <window_info id="Terminal" order="9" sideWeight="0.43237486" weight="0.53479856" />
       <window_info id="Version Control" order="10" weight="0.61294264" />
       <window_info anchor="bottom" id="Statistic" order="0" show_stripe_button="false" />
@@ -718,10 +747,21 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.test.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/__snapshots__/simpleMergeMap.test.tsx.snap">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/rxjs/internal/testing/TestScheduler.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testUtil.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -739,62 +779,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testUtil.ts">
+    <entry file="file://$PROJECT_DIR$/src/test/zip.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="667">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/__snapshots__/simpleMergeMap.test.tsx.snap">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simpleMergeMap.test.tsx">
+    <entry file="file://$PROJECT_DIR$/src/test/simpleMergeMap.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="1311">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scenarios.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1041">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/concurrentMergeMap.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/diagrams.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="88" column="16" lean-forward="true" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diagrams.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenarios.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="93" column="4" lean-forward="true" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/zip.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
