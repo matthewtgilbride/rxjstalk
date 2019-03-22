@@ -62,14 +62,50 @@ describe('the mergeMap diagram', () => {
 
   })
 
-  describe('at frame 8 (T3), the first observable (in1) has emitted three times and the second observable (in2) has emitted once', () => {
-    fit('nothing is emitted by the merged observable because the inner observable is >= 2 emissions behind (concurrency = 2)' + '' +
-      'at frame 12 (T4), the second observable (in2) emits its second value.  it is combined with the cached third emission from the first observable' +
+  describe('at frame 8 (T3), the first observable (in1) has emitted three times and the second observable (in2) has emitted once\n', () => {
+    it('nothing is emitted by the merged observable because the inner observable is >= 2 emissions behind (concurrency = 2)\n' + '' +
+      'at frame 16 (T4), the second observable (in2) emits its second value.  it is combined with the cached third emission from the first observable\n' +
       'if nothing else were to occur, the first obserable\'s third value would later emit with the second observables second', () => {
       objectEqualityTestScheduler().run(({cold, expectObservable}) => {
 
         const in1 = 'a--- b--- c--- ---- |'
         const in2 = '1--- ---- ---- 2--- |'
+
+        const out = 't--- u--- ---- v--- (xy) ---- ---- z--- |'
+
+        const values = {
+          t: 'a1',
+          u: 'b1',
+          v: 'a2',
+          x: 'b2',
+          y: 'c1',
+          z: 'c2'
+        }
+
+
+        const in1$ = cold(in1)
+        const in2$ = cold(in2)
+
+        const outputStream = in1$.pipe(
+          mergeMap(() => in2$, (x, y) => "" + x + y, 2)
+        )
+
+        expectObservable(outputStream).toBe(out, values)
+
+      })
+
+    })
+
+  })
+
+  describe('at frame 8 (T3), the first observable (in1) has emitted three times and the second observable (in2) has emitted once\n', () => {
+    xit('nothing is emitted by the merged observable because the inner observable is >= 2 emissions behind (concurrency = 2)\n' + '' +
+      'at frame 12 (T4), the second observable (in2) emits its second value.  it is combined with the cached third emission from the first observable\n' +
+      'if nothing else were to occur, the first obserable\'s third value would later emit with the second observables second', () => {
+      objectEqualityTestScheduler().run(({cold, expectObservable}) => {
+
+        const in1 = 'a--- b--- c--- ---- ---- |'
+        const in2 = '1--- ---- ---- 2--- 3--- |'
 
         const out = 't--- u--- ---- v--- (xy) ---- ---- z--- |'
 
