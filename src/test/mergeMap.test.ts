@@ -42,7 +42,6 @@ describe('mergeMap', () => {
       const in1 = 'abc --- --- --- --- |'
       const in2 = '1-- 2-- 3-- |'
 
-
       const in1$ = cold(in1)
       const in2$ = cold(in2)
 
@@ -73,7 +72,6 @@ describe('mergeMap', () => {
         y: 'c2',
         z: 'c3',
       }
-
 
       const in1$ = cold(in1)
       const in2$ = cold(in2)
